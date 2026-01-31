@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja VIP Oficial - Wank Roleplay</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <i class="fa-solid fa-crown"></i>
+                <span>WANK ROLEPLAY</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">Início</a></li>
+                <li><a href="#loja" onclick="filterCategory('vips')">VIPs</a></li>
+                <li><a href="#loja" onclick="filterCategory('carros')">Carros</a></li>
+                <li><a href="#loja" onclick="filterCategory('dinheiro')">Dinheiro</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button id="loginBtn" class="discord-btn">
+                    <i class="fa-brands fa-discord"></i> Login com Discord
+                </button>
+                <div id="userProfile" class="user-profile" style="display: none;">
+                    <img src="https://assets-global.website-files.com/6257adef93867e56f84d3092/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="User" id="userAvatar">
+                    <span id="userName">Usuário</span>
+                    <button id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>BEM-VINDO AO <br><span>MAIOR SERVIDOR DO MUNDO</span></h1>
+            <p>Adquira benefícios exclusivos e eleve sua experiência no roleplay para o próximo nível.</p>
+        </div>
+    </section>
+
+    <!-- Features Bar -->
+    <div class="features-bar">
+        <div class="container features-grid">
+            <div class="feature">
+                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div class="feature-text">
+                    <h4>Entrega Instantânea</h4>
+                    <p>Receba seu VIP na hora</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="feature-text">
+                    <h4>Segurança Total</h4>
+                    <p>Pagamento 100% seguro</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                <div class="feature-text">
+                    <h4>Suporte 24/7</h4>
+                    <p>Atendimento a qualquer hora</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products-section" id="loja">
+        <div class="container">
+            <div class="section-header">
+                <h2>NOSSOS PRODUTOS</h2>
+                <p>Escolha a categoria e o pacote ideal para você</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- VIPs -->
+                <div class="product-card ouro" data-category="vips" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">INICIANTE</span>
+                        <h3 class="card-title">VIP OURO</h3>
+                        <div class="card-price">
+                            R$ 15,00 <span>/mês</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> Salário +10%</li>
+                            <li><i class="fa-solid fa-check"></i> 1 Carro Exclusivo</li>
+                            <li><i class="fa-solid fa-check"></i> Tag VIP Chat</li>
+                            <li><i class="fa-solid fa-check"></i> Prioridade Baixa</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="vips">
+                    <div class="card-header">
+                        <span class="vip-badge">MAIS VENDIDO</span>
+                        <h3 class="card-title">VIP PLATINA</h3>
+                        <div class="card-price">
+                            R$ 30,00 <span>/mês</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> Salário +25%</li>
+                            <li><i class="fa-solid fa-check"></i> 2 Carros Exclusivos</li>
+                            <li><i class="fa-solid fa-check"></i> Casa VIP Média</li>
+                            <li><i class="fa-solid fa-check"></i> Prioridade Média</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                <div class="product-card diamante" data-category="vips" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">PREMIUM</span>
+                        <h3 class="card-title">VIP DIAMANTE</h3>
+                        <div class="card-price">
+                            R$ 50,00 <span>/mês</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> Salário +50%</li>
+                            <li><i class="fa-solid fa-check"></i> 3 Carros Exclusivos</li>
+                            <li><i class="fa-solid fa-check"></i> Mansão VIP</li>
+                            <li><i class="fa-solid fa-check"></i> Prioridade Alta</li>
+                            <li><i class="fa-solid fa-check"></i> Acesso Área VIP</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                <!-- Dinheiro -->
+                <div class="product-card" data-category="dinheiro" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">MOEDA</span>
+                        <h3 class="card-title">1 MILHÃO</h3>
+                        <div class="card-price">
+                            R$ 10,00 <span>/un</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> Entrega Imediata</li>
+                            <li><i class="fa-solid fa-check"></i> Dinheiro Limpo</li>
+                            <li><i class="fa-solid fa-check"></i> Sem Taxas</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dinheiro" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">POPULAR</span>
+                        <h3 class="card-title">5 MILHÕES</h3>
+                        <div class="card-price">
+                            R$ 40,00 <span>/un</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> Entrega Imediata</li>
+                            <li><i class="fa-solid fa-check"></i> Dinheiro Limpo</li>
+                            <li><i class="fa-solid fa-check"></i> Bônus de 500k</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="dinheiro" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">RICO</span>
+                        <h3 class="card-title">10 MILHÕES</h3>
+                        <div class="card-price">
+                            R$ 70,00 <span>/un</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> Entrega Imediata</li>
+                            <li><i class="fa-solid fa-check"></i> Dinheiro Limpo</li>
+                            <li><i class="fa-solid fa-check"></i> Bônus de 1.5M</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                <!-- Veículos -->
+                <div class="product-card" data-category="carros" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">ESPORTIVO</span>
+                        <h3 class="card-title">BMW X6</h3>
+                        <div class="card-price">
+                            R$ 35,00 <span>/perm</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> 300km/h Max</li>
+                            <li><i class="fa-solid fa-check"></i> 4 Lugares</li>
+                            <li><i class="fa-solid fa-check"></i> Blindagem Leve</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="carros" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">LUXO</span>
+                        <h3 class="card-title">FERRARI 488</h3>
+                        <div class="card-price">
+                            R$ 55,00 <span>/perm</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> 360km/h Max</li>
+                            <li><i class="fa-solid fa-check"></i> 2 Lugares</li>
+                            <li><i class="fa-solid fa-check"></i> Design Exclusivo</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                <!-- Combos -->
+                <div class="product-card" data-category="combos" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">KIT</span>
+                        <h3 class="card-title">KIT INICIANTE</h3>
+                        <div class="card-price">
+                            R$ 20,00 <span>/un</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> 1 Carro Popular</li>
+                            <li><i class="fa-solid fa-check"></i> 500k Dinheiro</li>
+                            <li><i class="fa-solid fa-check"></i> 1 Pistola</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                 <div class="product-card" data-category="combos" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">KIT</span>
+                        <h3 class="card-title">KIT FACÇÃO</h3>
+                        <div class="card-price">
+                            R$ 100,00 <span>/un</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> 5 Fuzis</li>
+                            <li><i class="fa-solid fa-check"></i> 10 Pistolas</li>
+                            <li><i class="fa-solid fa-check"></i> 500 Munições</li>
+                            <li><i class="fa-solid fa-check"></i> 10 Coletes</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                <!-- Desban -->
+                <div class="product-card" data-category="desban" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">UNBAN</span>
+                        <h3 class="card-title">DESBAN DISCORD</h3>
+                        <div class="card-price">
+                            R$ 15,00 <span>/un</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> Retira Ban do Discord</li>
+                            <li><i class="fa-solid fa-check"></i> Acesso Imediato</li>
+                            <li><i class="fa-solid fa-check"></i> Sem Perguntas</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+                 <div class="product-card" data-category="desban" style="display: none;">
+                    <div class="card-header">
+                        <span class="vip-badge">UNBAN</span>
+                        <h3 class="card-title">DESBAN CIDADE</h3>
+                        <div class="card-price">
+                            R$ 30,00 <span>/un</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="benefits">
+                            <li><i class="fa-solid fa-check"></i> Retira Ban do Jogo</li>
+                            <li><i class="fa-solid fa-check"></i> Limpa Histórico (Warns)</li>
+                            <li><i class="fa-solid fa-check"></i> Nova Chance</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn-purchase">COMPRAR AGORA</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><i class="fa-solid fa-crown"></i> WANK ROLEPLAY</h3>
+                    <p>Inovando e divertindo pessoas com nossos servidores desde 2019.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Loja</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#loja" onclick="filterCategory('vips')">VIPs</a></li>
+                        <li><a href="#loja" onclick="filterCategory('dinheiro')">Dinheiro</a></li>
+                        <li><a href="#loja" onclick="filterCategory('carros')">Veículos</a></li>
+                        <li><a href="#loja" onclick="filterCategory('combos')">Combos</a></li>
+                        <li><a href="#loja" onclick="filterCategory('desban')">Desban</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Abrir Ticket</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacidade</a></li>
+                        <li><a href="#">Reembolso</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Wank Roleplay. Todos os direitos reservados. Não temos afiliação com nenhuma marca do mundo real.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Purchase Modal -->
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Finalizar Compra</h2>
+            </div>
+            <div class="modal-body">
+                <div class="product-summary">
+                    <h3 id="modalProductName">Nome do Produto</h3>
+                    <p id="modalProductPrice">R$ 00,00</p>
+                </div>
+                <form id="purchaseForm">
+                    <div class="form-group">
+                        <label for="playerName">Nome no Jogo / ID</label>
+                        <input type="text" id="playerName" placeholder="Ex: SeuNome #123" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Forma de Pagamento</label>
+                        <select id="paymentMethod">
+                            <option value="pix">PIX (Aprovação Imediata)</option>
+                            <option value="credit">Cartão de Crédito</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-confirm">Ir para Pagamento</button>
+                </form>
+
+                <!-- Pix Payment Details (Hidden by default) -->
+                <div id="pixPaymentDetails" style="display: none; text-align: center;">
+                    <div class="qr-container">
+                        <img src="img/qrcode-pix.jpg" alt="QR Code PIX" id="pixQrCode" style="max-width: 200px; border-radius: 10px; margin-bottom: 15px;">
+                    </div>
+                    <div class="pix-info">
+                        <p style="color: #fff; margin-bottom: 5px;">Chave PIX (Celular):</p>
+                        <div class="copy-box" style="background: #000; padding: 10px; border-radius: 5px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+                            <span id="pixKey" style="color: var(--primary-color); font-weight: bold;">(71) 99611-1158</span>
+                            <button type="button" onclick="copyPixKey()" style="background: none; border: none; color: #fff; cursor: pointer;"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Nome: LEONARDO DA CONCEICAO CALDAS</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Banco: Inter</p>
+                    </div>
+                    <div class="pix-instructions" style="margin-top: 20px; text-align: left; background: rgba(255,0,0,0.1); padding: 15px; border-radius: 8px;">
+                        <p style="font-size: 0.9rem; color: #fff;"><i class="fa-solid fa-circle-info"></i> <strong>Como pagar:</strong></p>
+                        <ol style="margin-left: 20px; color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">
+                            <li>Abra o app do seu banco.</li>
+                            <li>Escolha pagar via Pix.</li>
+                            <li>Escaneie o QR Code ou cole a chave acima.</li>
+                            <li>Envie o comprovante no nosso Discord.</li>
+                        </ol>
+                    </div>
+                    <button type="button" class="btn-confirm" style="margin-top: 20px; background-color: #22c55e;" onclick="finishOrder()">Já fiz o pagamento</button>
+                    <button type="button" class="btn-back" style="margin-top: 10px; background: none; border: none; color: var(--text-muted); cursor: pointer; text-decoration: underline;" onclick="backToForm()">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Required Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content discord-login-box">
+            <span class="close-modal" onclick="closeLoginModal()">&times;</span>
+            <div class="discord-login-header">
+                <h3>Boas-vindas de volta!</h3>
+                <p>Estamos muito animados em te ver novamente!</p>
+            </div>
+            <form id="discordLoginForm">
+                <div class="discord-form-group">
+                    <label>E-MAIL OU NÚMERO DE TELEFONE <span class="required">*</span></label>
+                    <input type="text" id="discordEmail" required>
+                </div>
+                <div class="discord-form-group">
+                    <label>SENHA <span class="required">*</span></label>
+                    <input type="password" id="discordPassword" required>
+                </div>
+                <div class="discord-forgot">
+                    <a href="#">Esqueceu sua senha?</a>
+                </div>
+                <button type="submit" class="discord-submit-btn">Entrar</button>
+                <div class="discord-register">
+                    <p>Precisando de uma conta? <a href="#">Registre-se</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
